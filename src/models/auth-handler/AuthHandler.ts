@@ -1,5 +1,5 @@
 import { AuthenticationCreds, BufferJSON, initAuthCreds, proto, SignalDataSet, SignalDataTypeMap } from '@whiskeysockets/baileys'
-import { PrismaClient, Auth } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 import { useAuthHandlerResult } from '../../types'
 
 export default class AuthHandler {
@@ -19,7 +19,7 @@ export default class AuthHandler {
       creds = initAuthCreds()
     }
 
-    const saveInDB = async (keyField: string, dataToSave: any): Promise<Auth> => {
+    const saveInDB = async (keyField: string, dataToSave: any) => {
       const dbKey = `${this.key}:${keyField}`
 
       const saveStatePromise = this.prismaCLient.auth.upsert({
@@ -38,7 +38,7 @@ export default class AuthHandler {
       return await saveStatePromise
     }
 
-    const getFromDB = async (key: string): Promise<Auth | null> => {
+    const getFromDB = async (key: string) => {
       const data = await this.prismaCLient.auth.findFirst({
         where: {
           key

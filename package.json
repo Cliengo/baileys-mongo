@@ -4,8 +4,8 @@
   "description": "This package let you save in mongo the credentials to create whatsapp socket with Baileys package.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "repository": "git@github.com:mrodriguezbegueri/baileys-mongo.git",
-  "author": "Matias <mrodriguezbegueri@gmail.com>",
+  "repository": "git@github.com:Cliengo/baileys-mongo.git",
+  "author": "Jose <jose.coloj@cliengo.com>",
   "license": "MIT",
   "scripts": {
     "lint": "ts-standard",
@@ -23,7 +23,6 @@
   "dependencies": {
     "@prisma/client": "5.3.1",
     "@whiskeysockets/baileys": "^6.4.0"
-    
   },
   "eslintConfig": {
     "parserOptions": {
